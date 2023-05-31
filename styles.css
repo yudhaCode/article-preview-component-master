@@ -292,7 +292,7 @@ body {
     border-top-right-radius: 0;
     border-bottom-left-radius: 0.6rem;
     height: 100%;
-    width: 25rem;
+    width: 23rem;
   }
   .content-wrapper {
     width: 80%;
@@ -305,7 +305,7 @@ body {
     padding: 1rem 0;
     height: auto;
     bottom: 5rem;
-    left: 16rem;
+    left: 16.8rem;
   }
 
   .pointer {
