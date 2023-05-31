@@ -1,0 +1,322 @@
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* CSS Reset */
+
+/* Ganti margin dan padding default menjadi 0 */
+body,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+pre,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hapus garis bawah pada tautan */
+a {
+  text-decoration: none;
+}
+
+/* Hapus bullet pada daftar */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Hapus padding pada gambar */
+img {
+  border: 0;
+}
+
+/* Hapus gaya default pada elemen form */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* Hapus gaya default pada elemen form yang bisa diatur ulang oleh pengguna */
+button,
+input {
+  overflow: visible;
+}
+
+/* Atur tampilan inline pada elemen yang bisa diatur ulang oleh pengguna */
+button,
+select {
+  text-transform: none;
+}
+
+/* Ganti tampilan elemen inline-block agar sesuai di semua browser */
+button,
+input[type='checkbox'],
+input[type='radio'],
+select {
+  vertical-align: middle;
+  background-color: transparent;
+}
+
+/* Reset padding pada elemen input type="checkbox" dan input type="radio" di Internet Explorer 10- */
+input[type='checkbox'],
+input[type='radio'] {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hapus gaya default pada elemen textarea yang bisa diatur ulang oleh pengguna */
+textarea {
+  overflow: auto;
+}
+
+/* Ganti warna latar belakang elemen input yang diaktifkan */
+input:enabled,
+textarea:enabled {
+  background-color: #fff;
+}
+
+/* Atur tampilan tombol saat dihover dan saat aktif */
+button:hover,
+button:focus,
+button:active,
+input[type='button']:hover,
+input[type='button']:focus,
+input[type='button']:active,
+input[type='reset']:hover,
+input[type='reset']:focus,
+input[type='reset']:active,
+input[type='submit']:hover,
+input[type='submit']:focus,
+input[type='submit']:active {
+  cursor: pointer;
+}
+
+/* Set font dan ukuran default */
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--desaturated-dark-blue);
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 375px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+.card-wrapper {
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+  background-color: #ffffff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.thumbnail-wrapper {
+  background: url(./images/drawers.jpg) center no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  width: 100%;
+  height: 15rem;
+}
+
+.content-wrapper {
+  padding: 2rem;
+  padding-bottom: 1.2rem;
+  position: relative;
+}
+
+.card-title {
+  font-size: 1rem;
+  /* letter-spacing: 0.5px; */
+  margin-bottom: 1rem;
+  color: var(--very-dark-grayish-blue);
+}
+
+.card-text {
+  font-size: 0.84rem;
+  margin-bottom: 2rem;
+}
+
+.profile-wrapper,
+.profile-desc-wrapper {
+  display: flex;
+}
+
+.profile-wrapper {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-desc-wrapper {
+  align-items: center;
+}
+
+.profile-pic {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.profile-desc p:nth-child(1) {
+  font-weight: 700;
+}
+
+.profile-desc p:nth-child(2) {
+  color: var(--grayish-blue);
+}
+
+#share-icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  background-color: var(--light-grayish-blue);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+#share-icon-wrapper:hover {
+  background-color: var(--desaturated-dark-blue);
+}
+
+#share-icon-wrapper:hover .share-icon-path {
+  fill: #ffffff;
+}
+
+#share-icon-wrapper.active {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.share-icon-path.active {
+  fill: #ffffff;
+}
+
+.share-wrapper {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 0 1.8rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--very-dark-grayish-blue);
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+  height: 4.6rem;
+}
+
+.share-wrapper.active {
+  opacity: 1;
+}
+
+.social-icons-wrapper button img {
+  margin-right: 0.8rem;
+}
+
+.share-text {
+  font-size: 0.85rem;
+  letter-spacing: 5px;
+  margin-right: 1rem;
+}
+
+/* attribution */
+.attribution {
+  text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .card-wrapper {
+    display: flex;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-text {
+    margin-bottom: 1rem;
+  }
+
+  .thumbnail-wrapper {
+    background-position: left;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.6rem;
+    height: 100%;
+    width: 25rem;
+  }
+  .content-wrapper {
+    width: 80%;
+  }
+
+  .share-wrapper {
+    border-radius: 0.6rem;
+    width: 16rem;
+    justify-content: center;
+    padding: 1rem 0;
+    height: auto;
+    bottom: 5rem;
+    left: 16rem;
+  }
+
+  .pointer {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 14px 0 14px;
+    border-color: transparent;
+    border-top-color: var(--very-dark-grayish-blue);
+    position: absolute;
+    bottom: -0.7rem;
+    right: 7rem;
+  }
+}
