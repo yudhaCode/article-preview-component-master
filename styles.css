@@ -281,6 +281,7 @@ body {
   .card-title {
     font-size: 1.25rem;
     margin-bottom: 0.8rem;
+    padding-right: 1rem;
   }
 
   .card-text {
